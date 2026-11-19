@@ -1,111 +1,220 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+:root{ /*elemento raiz, bpdy y head*/
+    --fondo: #0F0F1A;
+    --cajas: #1A1A2E;
+    --cajasHover: #26263F;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+    --colorPrincipal: #7C5CFF;
+    --colorSecundario: #FF4D8D;
+    --colorTerciario: #2DD4BF;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+    --textoPrincipal: #F2F2F7;
+    --textoSecundario: #A0A0B8;
+    
+    --bordes: #33334D;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+body{
+    background-color: var(--fondo);
+    color: var(--textoPrincipal);
+    font-family: 'fuenteTexto', sans-serif;
 }
 
-body {
+@font-face {
+    font-family: 'fuenteTitulo';
+    src: url('assets/fuentes/Starborn.otf'), url('assets/fuentes/Starborn.ttf');
+}
+
+@font-face {
+    font-family: 'fuenteTexto';
+    src: url('assets/fuentes/CreatoDisplay-Medium.otf');
+}
+
+h1{
+    color: var(--colorPrincipal);
+    font-family: 'fuenteTitulo', sans-serif;
+    font-size: 5rem;
+    padding-inline: 2rem;
+}
+
+#barraBusqueda{
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--cajas);
+  border: 1px solid var(--bordes);
+  border-radius: 5px;
+}
+
+#tipoBusqueda, #contenidoBusqueda, #botonBusqueda {
+  font-family: 'fuenteTexto', sans-serif;
+  border: 0;
+  border-radius: 8px;
+  color: var(--textoPrincipal);
+}
+
+#tipoBusqueda{
+  padding: 1rem;
+  background: var(--cajasHover);
+  cursor: pointer;
+}
+
+#contenidoBusqueda{
+  flex: 1;
+  padding: 1rem;
+  background-color: transparent;
+}
+
+#contenidoBusqueda::placeholder {
+  color: var(--textoSecundario);
+}
+
+#botonBusqueda{
+  padding: 1rem;
+  background-color: var(--colorPrincipal);
+  cursor: pointer;
+}
+
+#botonBusqueda:hover {
+  background: var(--cajasHover);
+}
+
+#tipoBusqueda:focus-visible, #botonBusqueda:focus-visible, #contenidoBusqueda:focus{
+  outline: 2px solid var(--colorSecundario);
+  outline-offset: 2px;
+}
+
+#estadisticas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  color: var(--colorTerciario);
+}
+
+.estadistica {
   margin: 0;
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
+#resultado{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.mensaje{
+  grid-column: 1/-1;
   text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
+  color: var(--textoSecundario);
+}
+
+.tarjeta {
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: var(--cajas);
+  border: 1px solid var(--bordes);
+  border-radius: 8px;
+  transition: background-color 0.2s;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+.tarjeta:hover {
+  background-color: var(--cajasHover);
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
+.tarjeta img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 6px;
 }
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
+
+.tarjeta h3 {
   margin: 0;
+  font-size: 1rem;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+.tarjeta h3 a {
+  color: var(--textoPrincipal);
+  text-decoration: none;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+.tarjeta h3 a:hover {
+  color: var(--colorSecundario);
+}
+
+.tarjeta p {
+  margin: 0;
+  color: var(--textoSecundario);
+  font-size: 0.9rem;
+}
+
+.tarjeta audio {
+  width: 100%;
+  margin-top: auto;
+}
+
+#pestanas {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.pestana {
+  padding: 0.6rem 1rem;
+  font-family: 'fuenteTexto', sans-serif;
+  color: var(--textoSecundario);
+  background-color: var(--cajas);
+  border: 1px solid var(--bordes);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.pestana:hover {
+  background-color: var(--cajasHover);
+}
+
+.pestana.activa {
+  color: var(--textoPrincipal);
+  border-color: var(--colorPrincipal);
+}
+
+.pestana:focus-visible {
+  outline: 2px solid var(--colorSecundario);
+  outline-offset: 2px;
+}
+
+.tarjetaCuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.botonFav {
+  align-self: flex-start;
+  padding: 0.5rem 0.9rem;
+  font-family: 'fuenteTexto', sans-serif;
+  color: var(--textoSecundario);
+  background: transparent;
+  border: 1px solid var(--bordes);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+}
+
+.botonFav:hover {
+  color: var(--colorSecundario);
+  border-color: var(--colorSecundario);
+}
+
+.botonFav.activo {
+  color: var(--textoPrincipal);
+  background-color: var(--colorSecundario);
+  border-color: var(--colorSecundario);
+}
+
+.botonFav:focus-visible {
+  outline: 2px solid var(--colorSecundario);
+  outline-offset: 2px;
 }

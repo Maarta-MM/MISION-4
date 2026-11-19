@@ -2,25 +2,20 @@ const URL_API = "https://itunes.apple.com/search";
 const LIMITE = "20";
 const PAIS = "ES";
 
-const ENTIDADES = {
-    cancion: "song",
-    artista: "musicArtist",
-    album: "album"
-}
-
 export async function buscarContenido(termino, tipo, signal){
-    const entity = ENTIDADES[tipo];
-    if (!entity) throw new Error(`Tipo de búsqueda no válido: ${tipo}`);
-    
     const url = new URL(URL_API);
 
-    url.search = new URLSearchParams({
+    const parametros = ({
         term: termino,
         media: "music",
-        entity,
+        entity: "song",
         limit: LIMITE,
         country: PAIS
     });
+    
+    if(tipo === "artista") parametros.attribute = "artistTerm";
+
+    url.search = new URLSearchParams(parametros);
 
     const respuesta = await fetch(url, {signal});
 

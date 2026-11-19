@@ -8,8 +8,14 @@ export async function guardarFavoritas(datos) {
     });
 
     if(!respuesta.ok){
-        throw new Error("No se pudo guardar a canción");
+        throw new Error("No se pudo guardar la canción");
     }
 
+    return await respuesta.json();
+}
+
+export async function obtenerFavoritas() {
+    const respuesta = await fetch(URL_FAVORITAS);
+    if (!respuesta.ok) throw new Error("No se pudieron cargar las favoritas");
     return await respuesta.json();
 }
