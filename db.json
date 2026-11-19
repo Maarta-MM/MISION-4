@@ -1,0 +1,12 @@
+{
+  "favoritas": [
+    {
+      "titulo": "Me falta algo",
+      "artista": "Quevedo",
+      "nota": 5,
+      "comentario": "Mi canción favorita desde siempre",
+      "id": "jopzRooSAhw"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

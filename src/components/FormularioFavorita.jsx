@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { guardarFavoritas } from "../api/api-favoritas";
 
 // reglas
 // coerce cambia a lo que quieras que sea, si mete string saca numero
@@ -18,9 +19,13 @@ export default function FormularioFavorita(){
     });
 
     async function onSubmit(datos) {
-        await new Promise((r) => setTimeout(r, 800));
-        console.log("Datos válidos: ", datos);
-        reset();
+        try{
+            await guardarFavoritas(datos);
+            console.log("Canción guardada correctamente");
+            reset();
+        }catch (error){
+            console.error("Error al guardar: ", error);
+        }
     }
 
     // guarda en "titulo", RHF lo leerá cuando haga falta
