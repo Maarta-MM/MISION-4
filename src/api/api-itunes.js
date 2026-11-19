@@ -12,7 +12,7 @@ export async function buscarContenido(termino, tipo, signal){
         limit: LIMITE,
         country: PAIS
     });
-    
+
     if(tipo === "artista") parametros.attribute = "artistTerm";
 
     url.search = new URLSearchParams(parametros);
@@ -30,4 +30,15 @@ export async function buscarContenido(termino, tipo, signal){
     }
 
     return datos.results;
+}
+
+export function normalizarCancion(c){
+    return {
+        id: c.trackId,
+        titulo: c.trackName,
+        subtitulo: c.artistName,
+        imagen: c.artworkUrl100,
+        preview: c.previewUrl,
+        url:c.trackViewUrl,
+    };
 }

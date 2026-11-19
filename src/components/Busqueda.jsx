@@ -6,20 +6,30 @@ export default function Busqueda({onBuscar}){
     });
 
     function onSubmit({termino, tipo}){
-        if (termino.trim()) onBuscar({termino: termino.trim(), tipo})
+        const termino_limpio = termino.trim();
+        if (termino_limpio) onBuscar({termino: termino_limpio, tipo})
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <label htmlFor="termino">Buscar</label>
-            <input id="termino" {...register("termino")}/>
-
-            <select aria-label="Tipo de búsqueda" {...register("tipo")}>
+        <form id="barraBusqueda" onSubmit={handleSubmit(onSubmit)}>
+            <select 
+                id="tipoBusqueda" 
+                aria-label="Tipo de búsqueda"
+                {...register("tipo")}
+            >
                 <option value="cancion">Canción</option>
                 <option value="artista">Artista</option>
             </select>
 
-            <button type="submit">Buscar</button>
+            <input 
+                id="contenidoBusqueda"
+                type="search" 
+                aria-label="Buscar canción o artista"
+                placeholder="Buscar canción o artista"
+                {...register("termino")}
+            />
+
+            <button id="botonBusqueda" type = "submit">Buscar</button>
         </form>
     );
 }
