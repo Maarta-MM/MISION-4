@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Busqueda from "./components/Busqueda";
 import Resultados from "./components/Resultados";
+import PanelCancion from "./components/PanelCancion";
 
 export default function App() {
     const [consulta, setConsulta] = useState(null);
@@ -11,13 +12,21 @@ export default function App() {
         <div id="app">
             <h1>Sonora</h1>
             <Busqueda onBuscar={setConsulta} />
-            <Resultados
-                consulta={consulta}
-                sonandoId={sonandoId}
-                onReproducir={setSonandoId}
-                onElegir={setSeleccionada}
-            />
-            {seleccionada && <p>Has elegido: {seleccionada.titulo}</p>}
+
+            <div className={seleccionada ? "pantallaPartida" : ""}>
+                <Resultados
+                    consulta={consulta}
+                    sonandoId={sonandoId}
+                    onReproducir={setSonandoId}
+                    onElegir={setSeleccionada}
+                />
+                {seleccionada && (
+                    <PanelCancion
+                        cancion={seleccionada}
+                        onCerrar={() => setSeleccionada(null)}
+                    />
+                )}
+            </div>
         </div>
     );
 }

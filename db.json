@@ -6,6 +6,26 @@
       "nota": 5,
       "comentario": "Mi canción favorita desde siempre",
       "id": "jopzRooSAhw"
+    },
+    {
+      "titulo": "Jukiar",
+      "artista": "Clarent & Quevedo",
+      "nota": 5,
+      "comentario": "yekale",
+      "trackId": 6816298049,
+      "portada": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/9d/f4/4e/9df44ed8-2e05-2da4-a4c4-e93be35104dc/1200220208883.jpg/100x100bb.jpg",
+      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/44/ee/66/44ee66e4-7e27-8611-6c8f-74a9d0289ac9/mzaf_902917860167062049.plus.aac.p.m4a",
+      "id": "iGCxycCDXQE"
+    },
+    {
+      "titulo": "AL GOLPITO",
+      "artista": "Quevedo & Nueva Línea",
+      "nota": 5,
+      "comentario": "las niñaaaaaaaaas",
+      "trackId": 1894271858,
+      "portada": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/56/e5/bf/56e5bfea-2071-1224-1c62-f6119195a949/8718521173821.jpg/100x100bb.jpg",
+      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/cc/5c/58/cc5c58bc-3736-63e4-59b2-2bfc484608d4/mzaf_5503085011171594554.plus.aac.p.m4a",
+      "id": "6W6t_2e63NE"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

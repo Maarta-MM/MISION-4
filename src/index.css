@@ -218,3 +218,100 @@ h1{
   outline: 2px solid var(--colorSecundario);
   outline-offset: 2px;
 }
+
+.pantallaPartida {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+    align-items: start;
+}
+
+#panelCancion {
+    position: sticky;
+    top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    background: var(--cajas);
+    border: 1px solid var(--bordes);
+    border-radius: 12px;
+    color: var(--textoPrincipal);
+}
+
+#panelCancion p {
+    color: var(--textoSecundario);
+    margin: 0;
+}
+
+#panelCancion img {
+    width: 100%;
+    max-width: 300px;
+    align-self: center;
+    border-radius: 8px;
+}
+
+#panelCancion audio {
+    width: 100%;
+}
+
+#panelCancion form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 0.75rem;
+}
+
+#panelCancion input,
+#panelCancion textarea {
+    padding: 0.6rem;
+    border-radius: 8px;
+    border: 1px solid var(--bordes);
+    background: var(--fondo);
+    color: var(--textoPrincipal);
+    font: inherit;
+}
+
+#panelCancion input:focus,
+#panelCancion textarea:focus {
+    outline: 2px solid var(--colorPrincipal);
+}
+
+#panelCancion [aria-invalid="true"] {
+    border-color: var(--colorSecundario);
+}
+
+#panelCancion [role="alert"] {
+    color: var(--colorSecundario);
+    font-size: 0.85rem;
+}
+
+/* Botones en rosa */
+#panelCancion button {
+    padding: 0.7rem 1.4rem;
+    border: none;
+    border-radius: 10px;
+    background: var(--colorSecundario);
+    color: var(--textoPrincipal);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+#panelCancion button:hover {
+    opacity: 0.85;
+}
+
+#panelCancion button:active {
+    transform: scale(0.97);
+}
+
+#panelCancion button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#panelCancion > button {
+    align-self: flex-end;
+}

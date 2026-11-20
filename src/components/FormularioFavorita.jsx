@@ -12,17 +12,23 @@ const esquemaFavorita = z.object({
     comentario: z.string().max(350, "Máximo 350 caracteres"),
 });
 
-export default function FormularioFavorita(){
+export default function FormularioFavorita({cancion, onGuardada}){
     const {register, handleSubmit, reset, formState: {errors, isSubmitting}} = useForm({
         resolver: zodResolver(esquemaFavorita),
-        defaultValues: {titulo: "", artista: "", nota: "", comentario: ""},
+        defaultValues: {titulo: cancion.titulo, artista: cancion.subtitulo, nota: "", comentario: ""},
     });
 
     async function onSubmit(datos) {
         try{
-            await guardarFavoritas(datos);
-            console.log("Canción guardada correctamente");
+            await guardarFavoritas({
+                ...datos,
+                trackId: cancion.id,
+                portada: cancion.imagen,
+                preview: cancion.preview,
+            });
+            
             reset();
+            onGuardada();
         }catch (error){
             console.error("Error al guardar: ", error);
         }
