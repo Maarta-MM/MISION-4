@@ -1,6 +1,6 @@
 import FormularioFavorita from "./FormularioFavorita";
 
-export default function PanelCancion({cancion, onCerrar}){
+export default function PanelCancion({cancion, onCerrar, onGuardada}){
     const portada = cancion.imagen?.replace("100x100", "300x300");
 
     return (
@@ -16,7 +16,7 @@ export default function PanelCancion({cancion, onCerrar}){
             <FormularioFavorita 
                 key = {cancion.id}
                 cancion = {cancion}
-                onGuardada = {onCerrar}
+                onGuardada = {onGuardada}
             />
         </aside>
     );

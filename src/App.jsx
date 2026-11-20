@@ -9,6 +9,7 @@ export default function App() {
     const [seleccionada, setSeleccionada] = useState(null);
     const [sonandoId, setSonandoId] = useState(null);
     const [vista, setVista] = useState("busqueda");
+    const [aviso, setAviso] = useState("");
 
     function buscar(nuevaConsulta) {
         setConsulta(nuevaConsulta);
@@ -20,6 +21,12 @@ export default function App() {
         setVista(nuevaVista);
         setSeleccionada(null);
         setSonandoId(null);
+    }
+
+    function alGuardar(){
+        setSeleccionada(null);
+        setAviso("Canción guardada!")
+        setTimeout(() => setAviso(""), 4000);
     }
 
     return (
@@ -45,6 +52,8 @@ export default function App() {
                 </button>
             </nav>
 
+            <p role="status" className="aviso">{aviso}</p>
+
             {vista === "busqueda" ? (
                 <div className={seleccionada ? "pantallaPartida" : ""}>
                     <Resultados
@@ -57,6 +66,7 @@ export default function App() {
                         <PanelCancion
                             cancion={seleccionada}
                             onCerrar={() => setSeleccionada(null)}
+                            onGuardada={alGuardar}
                         />
                     )}
                 </div>

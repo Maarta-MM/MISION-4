@@ -26,6 +26,8 @@ export async function buscarContenido(termino, tipo, signal){
     }
 
     const datos = await respuesta.json();
+
+    //datos.results[0].trackName = 12345;
     const resultado = esquemaResupuestaItunes.safeParse(datos.results);
 
     if (!resultado.success) {

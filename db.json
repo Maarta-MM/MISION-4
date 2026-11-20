@@ -49,6 +49,16 @@
       "portada": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7d/c1/f0/7dc1f09c-743e-35a6-2e13-0a3f10031812/820233913997.jpg/100x100bb.jpg",
       "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1c/b2/be/1cb2befb-a0d8-7c87-6478-2e3a83c52dd6/mzaf_1284116945694451943.plus.aac.p.m4a",
       "id": "c3lMTyf7ikg"
+    },
+    {
+      "titulo": "COLORÉAME",
+      "artista": "La Pantera",
+      "nota": 5,
+      "comentario": "Temazo no pongo mas porque no me deja. Piel de gallina.",
+      "trackId": 6830311105,
+      "portada": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7c/20/cb/7c20cb3d-bc04-11d8-7279-bdbd64f65c9b/1200220406135.jpg/100x100bb.jpg",
+      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/40/42/d4/4042d46f-aaa0-6b79-94c7-d45ebe394f05/mzaf_3551313763081095638.plus.aac.p.m4a",
+      "id": "TqWAqXzwHSI"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
