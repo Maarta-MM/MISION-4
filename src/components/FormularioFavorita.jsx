@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { guardarFavoritas } from "../api/api-favoritas";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 // reglas
 // coerce cambia a lo que quieras que sea, si mete string saca numero
@@ -13,25 +14,32 @@ const esquemaFavorita = z.object({
 });
 
 export default function FormularioFavorita({cancion, onGuardada}){
-    const {register, handleSubmit, reset, formState: {errors, isSubmitting}} = useForm({
+    const queryClient = useQueryClient();
+
+    const {register, handleSubmit, formState: {errors}} = useForm({
         resolver: zodResolver(esquemaFavorita),
-        defaultValues: {titulo: cancion.titulo, artista: cancion.subtitulo, nota: "", comentario: ""},
+        defaultValues: {
+            titulo: cancion.titulo, 
+            artista: cancion.subtitulo, 
+            nota: "", 
+            comentario: ""},
+    });
+
+    const mutacion = useMutation({
+        mutationFn: guardarFavoritas,
+        onSuccess: () => {
+            queryClient.invalidateQueries({queryKey: ["favoritas"]});
+            onGuardada();
+        },
     });
 
     async function onSubmit(datos) {
-        try{
-            await guardarFavoritas({
-                ...datos,
-                trackId: cancion.id,
-                portada: cancion.imagen,
-                preview: cancion.preview,
-            });
-            
-            reset();
-            onGuardada();
-        }catch (error){
-            console.error("Error al guardar: ", error);
-        }
+        mutacion.mutate({
+            ...datos,
+            trackId: cancion.id,
+            portada: cancion.imagen,
+            preview: cancion.preview,
+        });
     }
 
     // guarda en "titulo", RHF lo leerá cuando haga falta
@@ -91,9 +99,13 @@ export default function FormularioFavorita({cancion, onGuardada}){
                 )}
             </div>
             
-            <button type="submit" disabled={isSubmitting}>
-                {isSubmitting ? "Guardando" : "Guardar"}
+            <button type="submit" disabled={mutacion.isPending}>
+                {mutacion.isPending ? "Guardando…" : "Guardar"}
             </button>
+
+            {mutacion.isError && (
+                <p role="alert">{mutacion.error.message}</p>
+            )}
         </form>
     );
 }
