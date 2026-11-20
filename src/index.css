@@ -378,3 +378,18 @@ h1{
     font-weight: 600;
     min-height: 1.5rem; /* evita que la página salte al aparecer */
 }
+
+.errorBusqueda {
+    flex-basis: 100%;
+    margin: 0;
+    color: var(--colorSecundario);
+    font-size: 0.85rem;
+}
+
+#barraBusqueda {
+    flex-wrap: wrap;
+}
+
+#contenidoBusqueda[aria-invalid="true"] {
+    outline: 2px solid var(--colorSecundario);
+}
