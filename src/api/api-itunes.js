@@ -1,3 +1,5 @@
+import { esquemaResupuestaItunes } from "../schemas/esquema";
+
 const URL_API = "https://itunes.apple.com/search";
 const LIMITE = "20";
 const PAIS = "ES";
@@ -24,9 +26,11 @@ export async function buscarContenido(termino, tipo, signal){
     }
 
     const datos = await respuesta.json();
+    const resultado = esquemaResupuestaItunes.safeParse(datos.results);
 
-    if (!Array.isArray(datos.results)) {
-        throw new Error("Respuesta de la API con formato inesperado");
+    if (!resultado.success) {
+        console.error("Respuesta de iTunes no válida: ", resultado.error);
+        throw new Error("Respuesta de iTunes con formato inesperado");
     }
 
     return datos.results;

@@ -7,10 +7,10 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 // reglas
 // coerce cambia a lo que quieras que sea, si mete string saca numero
 const esquemaFavorita = z.object({
-    titulo: z.string().min(1, "El título es obligatorio"),
-    artista: z.string().min(1, "El artista es obligatorio"),
-    nota: z.coerce.number().min(1, "Mínimo 1").max(5, "Máximo 5"),
-    comentario: z.string().max(350, "Máximo 350 caracteres"),
+    titulo: z.string().trim().min(1, "El título es obligatorio"),
+    artista: z.string().trim().min(1, "El artista es obligatorio"),
+    nota: z.coerce.number({error: "La nota debe ser un número"}).int("La nota debe ser un número entero").min(1, "Mínimo 1").max(5, "Máximo 5"),
+    comentario: z.string().trim().max(350, "Máximo 350 caracteres"),
 });
 
 export default function FormularioFavorita({cancion, onGuardada}){
