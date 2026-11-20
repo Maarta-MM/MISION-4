@@ -1,13 +1,6 @@
 {
   "favoritas": [
     {
-      "titulo": "Me falta algo",
-      "artista": "Quevedo",
-      "nota": 5,
-      "comentario": "Mi canción favorita desde siempre",
-      "id": "jopzRooSAhw"
-    },
-    {
       "titulo": "Jukiar",
       "artista": "Clarent & Quevedo",
       "nota": 5,
@@ -26,6 +19,36 @@
       "portada": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/56/e5/bf/56e5bfea-2071-1224-1c62-f6119195a949/8718521173821.jpg/100x100bb.jpg",
       "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/cc/5c/58/cc5c58bc-3736-63e4-59b2-2bfc484608d4/mzaf_5503085011171594554.plus.aac.p.m4a",
       "id": "6W6t_2e63NE"
+    },
+    {
+      "titulo": "Ojalá",
+      "artista": "Silvio Rodríguez",
+      "nota": 4,
+      "comentario": "De las mejores canciones de la historia",
+      "trackId": 589348950,
+      "portada": "https://is1-ssl.mzstatic.com/image/thumb/Features124/v4/cb/90/06/cb90066e-90a8-f921-3f06-52a3087d4342/dj.swhhwots.jpg/100x100bb.jpg",
+      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/41/c2/89/41c289d2-cde1-876d-5ea5-8a2f21170838/mzaf_12931652830746154892.plus.aac.p.m4a",
+      "id": "iyM9PJgI2Bk"
+    },
+    {
+      "titulo": "Luciérnagas",
+      "artista": "Milo j & Silvio Rodríguez",
+      "nota": 1,
+      "comentario": "",
+      "trackId": 1839970316,
+      "portada": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f5/a6/33/f5a63325-8bd8-7e36-8850-878e2522169e/196873615486.jpg/100x100bb.jpg",
+      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ef/65/94/ef6594f6-b927-b0c6-4d30-ead68b898417/mzaf_12293391322817490254.plus.aac.p.m4a",
+      "id": "vF88ZxjsVwk"
+    },
+    {
+      "titulo": "NO ME GUILLO v2",
+      "artista": "Anmi, La Pantera & Kabasaki",
+      "nota": 4,
+      "comentario": "toooooooooooooop",
+      "trackId": 6785460374,
+      "portada": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7d/c1/f0/7dc1f09c-743e-35a6-2e13-0a3f10031812/820233913997.jpg/100x100bb.jpg",
+      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1c/b2/be/1cb2befb-a0d8-7c87-6478-2e3a83c52dd6/mzaf_1284116945694451943.plus.aac.p.m4a",
+      "id": "c3lMTyf7ikg"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

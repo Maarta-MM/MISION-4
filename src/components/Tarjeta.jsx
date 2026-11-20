@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect} from "react";
 
-export default function Tarjeta({item, sonando, onReproducir, onElegir}) {
+export default function Tarjeta({item, sonando, onReproducir, onElegir, children}) {
     const [imagenRota, setImagenRota] = useState(false);
     const audioRef = useRef(null);
 
@@ -8,6 +8,13 @@ export default function Tarjeta({item, sonando, onReproducir, onElegir}) {
         if (!sonando) audioRef.current?.pause();
     }, [sonando]);
 
+    /*
+        Children: es como un hueco que dejas en un componente para luego rellenarlo
+        aqui donde en la pestaña de busqueda pone el boton de puntuar, 
+        en favoritos se sustuuye por la nota y el comentario
+        Esto es porque en resultadoos pasamos onElegir y nada más 
+        y en listaFav no pasamos el parametro pero si que introducimos la nota y el comentario 
+    */ 
     return (
         <article className="tarjeta">
             {item.imagen && !imagenRota && (
@@ -37,10 +44,14 @@ export default function Tarjeta({item, sonando, onReproducir, onElegir}) {
                         onPlay={() => onReproducir(item.id)}
                     />
                 }
+                
+                {children}
 
-                <button type="button" onClick={() => onElegir(item)}>
-                    ★ Puntuar ★
-                </button>
+                {onElegir && (
+                    <button type="button" onClick={() => onElegir(item)}>
+                        ★ Puntuar ★
+                    </button>
+                )}
             </div>
         </article>
     );

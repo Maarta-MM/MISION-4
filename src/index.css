@@ -314,3 +314,60 @@ h1{
     opacity: 0.5;
     cursor: not-allowed;
 }
+
+#pestanas {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+#pestanas button {
+    padding: 0.7rem 1.4rem;
+    border: 1px solid var(--bordes);
+    border-radius: 10px;
+    background: var(--cajas);
+    color: var(--textoSecundario);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+
+#pestanas button:hover {
+    background: var(--cajasHover);
+    color: var(--textoPrincipal);
+}
+
+#pestanas button:active {
+    transform: scale(0.97);
+}
+
+#pestanas button[aria-current="page"] {
+    background: var(--colorPrincipal);
+    border-color: var(--colorPrincipal);
+    color: var(--textoPrincipal);
+}
+
+#pestanas button:focus-visible {
+    outline: 2px solid var(--colorTerciario);
+    outline-offset: 2px;
+}
+
+.notaFav {
+    color: var(--colorSecundario);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.notaFav span {
+    color: var(--textoSecundario);
+    font-size: 0.9rem;
+    letter-spacing: 0;
+}
+
+.comentarioFav {
+    color: var(--textoSecundario);
+    font-style: italic;
+    margin: 0;
+}
