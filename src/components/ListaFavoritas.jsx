@@ -3,7 +3,7 @@ import {obtenerFavoritas} from "../api/api-favoritas";
 import Mensaje from "./Mensaje";
 import Tarjeta from "./Tarjeta";
 
-export default function ListaFavoritas(sonandoId, onReproducir){
+export default function ListaFavoritas({sonandoId, onReproducir}){
     const {data, isLoading, isError, error} = useQuery({
         queryKey: ["favoritas"],
         queryFn: obtenerFavoritas,
