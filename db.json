@@ -1,16 +1,6 @@
 {
   "favoritas": [
     {
-      "titulo": "Jukiar",
-      "artista": "Clarent & Quevedo",
-      "nota": 5,
-      "comentario": "yekale",
-      "trackId": 6816298049,
-      "portada": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/9d/f4/4e/9df44ed8-2e05-2da4-a4c4-e93be35104dc/1200220208883.jpg/100x100bb.jpg",
-      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/44/ee/66/44ee66e4-7e27-8611-6c8f-74a9d0289ac9/mzaf_902917860167062049.plus.aac.p.m4a",
-      "id": "iGCxycCDXQE"
-    },
-    {
       "titulo": "AL GOLPITO",
       "artista": "Quevedo & Nueva Línea",
       "nota": 5,
@@ -41,16 +31,6 @@
       "id": "vF88ZxjsVwk"
     },
     {
-      "titulo": "NO ME GUILLO v2",
-      "artista": "Anmi, La Pantera & Kabasaki",
-      "nota": 4,
-      "comentario": "toooooooooooooop",
-      "trackId": 6785460374,
-      "portada": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7d/c1/f0/7dc1f09c-743e-35a6-2e13-0a3f10031812/820233913997.jpg/100x100bb.jpg",
-      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1c/b2/be/1cb2befb-a0d8-7c87-6478-2e3a83c52dd6/mzaf_1284116945694451943.plus.aac.p.m4a",
-      "id": "c3lMTyf7ikg"
-    },
-    {
       "titulo": "COLORÉAME",
       "artista": "La Pantera",
       "nota": 5,
@@ -59,6 +39,16 @@
       "portada": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7c/20/cb/7c20cb3d-bc04-11d8-7279-bdbd64f65c9b/1200220406135.jpg/100x100bb.jpg",
       "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/40/42/d4/4042d46f-aaa0-6b79-94c7-d45ebe394f05/mzaf_3551313763081095638.plus.aac.p.m4a",
       "id": "TqWAqXzwHSI"
+    },
+    {
+      "titulo": "Orbiter",
+      "artista": "Noah Kahan",
+      "nota": 4,
+      "comentario": "temazo de carretera, para llorar o simplemente pensar",
+      "trackId": 6762757958,
+      "portada": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f9/aa/69/f9aa6992-40ca-a756-85ca-b27c48f7c720/26UMGIM02802.rgb.jpg/100x100bb.jpg",
+      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/62/a9/34/62a93491-136b-4396-cacc-390f5e24f0a0/mzaf_16199650500860119333.plus.aac.p.m4a",
+      "id": "1K92q5yPvvQ"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
